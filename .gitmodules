@@ -1,0 +1,3 @@
+[submodule "ADO5"]
+	path = ADO5
+	url = https://github.com/KaikeCarmona/ADOs_java.git
