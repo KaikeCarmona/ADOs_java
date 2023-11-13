@@ -39,7 +39,7 @@ public class Livraria_pi {
             }
 
             switch (opcao) {
-
+                // Verificação se o usuario existe dentro do array USUARIOS
                 case 1:
 
                     System.out.println("Digite o nome do usuario:");
@@ -50,12 +50,13 @@ public class Livraria_pi {
 
                     loginSenha = teclado.next();
 
+                    // Variavel responsavel por fazer a verificação se o LOGINUSUARIO existe dentro do array USUARIOS
                     int indexUsuario = Arrays.asList(usuarios).indexOf(loginUsuario);
 
+                    // Se o usuario existir dentro do array usuarios e a senha digitada (passo como parametro do array senhas o indexUsuario para poder vincular o usuario a senha do mesmo)
+                    //  existir dentro do array loginSenha o sistema efetuara o login do usuario, caso contrario retornara um erro
                     if (indexUsuario != -1 && senhas[indexUsuario].equals(loginSenha)) {
                         System.out.println("Login bem-sucedido!");
-                        System.out.println("usuario: " + indexUsuario);
-
                     } else {
                         System.out.println("Usuário ou senha incorretos");
                     }
@@ -63,6 +64,7 @@ public class Livraria_pi {
                     break;
 
                 case 2:
+                    // Inserção dos dados senha e usuario nos seus respectivos arrays
 
                     System.out.print("\n==========! Cadastro de usuario !==========");
 
@@ -74,6 +76,8 @@ public class Livraria_pi {
 
                     novaSenha = teclado.next();
 
+                    // a variavel posicaoUsuario tem a funcao de controlar a posicao dos dados inseridos, toda vez que eu inserir uma senha ou usuario, 
+                    //ela recebera ela mesma + 1, dessa maneira os dados não se misturam e cada um recebe uma posicao
                     usuarios[posicaoUsuario] = novoUsuario;
                     senhas[posicaoUsuario] = novaSenha;
 
@@ -84,7 +88,7 @@ public class Livraria_pi {
                     break;
 
                 case 3:
-
+                    // Saida do loop
                     System.out.print("Saindo...");
 
                     loop = false;
@@ -92,7 +96,7 @@ public class Livraria_pi {
                     break;
 
                 default:
-
+                    // Algum dado invalido foi inserido, então retorno esse erro
                     System.out.print("opcao invalida");
 
                     break;
